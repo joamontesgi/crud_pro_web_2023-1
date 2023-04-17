@@ -7,8 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Document</title>
 </head>
+<button onclick="mostrarMensaje()">Mostrar mensaje</button>
 <body>
     <div class="container mt-5 col-md-6 text-center">
+        <h1>Crear</h1>
         <form action="{{route('products.store') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -42,18 +44,19 @@
                         <td>{{$product->name}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->description}}</td>
-                        {{-- <td>
+                        <td>
                             <a href="{{route('products.edit', $product->id)}}" class="btn btn-primary">Editar</a>
                             <form action="{{route('products.destroy', $product->id)}}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
-                        </td> --}}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+<script src="js/mostrarAlerta.js"></script>
 </body>
 </html>
